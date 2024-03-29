@@ -56,6 +56,8 @@ public class KafkaConsumerService {
             consumerThreads.add(consumerThread);
             consumerThread.start();
         } catch (Exception e) {
+
+            logger.error("Error occurred while subscribing to topic: {}", topic, e);
             logger.error("Error occurred while subscribing to topic: {}", topic, e);
         }
     }
